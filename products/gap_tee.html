@@ -1,0 +1,167 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href ="styleProducts.css">
+  <script src="../script.js"></script>
+  
+  <title>Fax</title>
+</head>
+
+<body>
+
+  <script>
+    window.addEventListener('load', function() {
+      console.log("loading new page index");
+
+        $("*").addClass("start");
+      });
+      </script>
+ 
+
+    <nav class="navbar">
+      <div class="logo"><img src="../pictures/FAX-3D.gif" alt="Description of the GIF"></div>
+      <ul class="menu">
+        <li><a href="" onclick="transition('../index.html')" class="active">Home</a></li>
+        <li><a onclick="transition('../shop.html')">Shop</a></li>
+        <li><a href="">Policies</a></li>
+      </ul>
+
+      <div class="menu-btn">
+        <i class="fa fa-bars"></i>
+      </div>
+    </nav>
+
+    <section class="content">
+      <div class="flex-box">
+        <div class="left">
+            <div class="big-img">
+                <img src="../pictures/shirt_transparent_front.png">
+            </div>
+            <div class="images">
+                <div class="small-img">
+                    <img src="../pictures/shirt_transparent_front.png" onclick="showImg(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="../pictures/shirt_transparent_back.png" onclick="showImg(this.src)">
+                </div>
+                <!-- <div class="small-img">
+                    <img src="../pictures/backregan.jpeg" onclick="showImg(this.src)">
+                </div> -->
+                <!-- <div class="small-img">
+                    <img src="../pictures/fronttee.png" onclick="showImg(this.src)">
+                </div> -->
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="pname">GAP TEE</div>
+            
+            <div class="price">C$45</div>
+            <div id="error-message" style="color: red; display: none;">Please choose a size.</div>
+
+            <div class="size">
+                <p>Size :</p>
+                <div class="psize">S</div>
+                <div class="psize">M</div>
+                <div class="psize">L</div>
+            </div>
+            <div class="quantity">
+                <p>Quantity :</p>
+                <input type="number" min="1" max="5" value="1">
+            </div>
+            <div class="btn-box">
+                <button class="buy-btn" id="buy-btn">Buy Now</a></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <script>
+        let bigImg = document.querySelector('.big-img img');
+        function showImg(pic){
+          bigImg.style.opacity = "0";
+          setTimeout(function() {
+            bigImg.src = pic;
+            bigImg.style.opacity = "1";
+          },800);
+            
+        }
+
+
+        const sizes = document.querySelectorAll('.psize');
+        let activeSize;
+
+sizes.forEach((size) => {
+  size.addEventListener('click', function () {
+    sizes.forEach((s) => s.classList.remove('active'));
+    this.classList.add('active');
+    activeSize = this.textContent; // Update the active size to the clicked size
+    console.log('Active size:', activeSize);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+
+const dbutton = document.getElementById("buy-btn"); 
+const errorMessage = document.getElementById("error-message");
+
+
+dbutton.addEventListener('click', function() {
+const timestamp = new Date().toISOString(); // Get the current timestamp in ISO format
+console.log('size:' + activeSize + ' clicked at:', timestamp);
+let sizeLinks = {'S':'https://buy.stripe.com/14k9CLfhlb1j7o44gj','M':'https://buy.stripe.com/6oE8yHb157P79wcbIK','L':'https://buy.stripe.com/fZe4ir1qvc5naAgaEF'};
+
+const link = sizeLinks[activeSize];
+
+if (link) {
+      console.log('Redirecting to link:', link);
+
+      // Redirect to the link
+      window.location.href = link;
+    } else {
+      errorMessage.style.display = "block";
+      console.log('No link found for size:', activeSize);
+    }
+
+
+
+// If you want to display the timestamp on the page:
+// const timestampElement = document.getElementById('timestamp-display'); // Replace with an appropriate element ID
+// timestampElement.innerText = 'Button clicked at: ' + timestamp;
+});
+});
+  
+    </script>
+    </section>
+
+    
+  
+  
+
+    <!-- <footer>
+      <p>Copyrights @ <a href=""> FAX </a></p>
+    </footer> -->
+
+
+
+    <script>
+      $(".menu-btn").click(function(){
+        $(".navbar .menu").toggleClass("active");
+        $(".menu-btn i").toggleClass("active");
+      });
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="../dist/mail.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,458 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    opacity: 0;
+}
+
+body{
+    height: 100%;
+    /* background-image: url(../pictures/dark.jpg); */
+    background-size: cover;
+    background-position: center;
+    animation: 10s infinite; 
+     background-repeat: no-repeat;
+    transition: background-color 1s ease;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    overflow-y: scroll;
+
+}
+
+
+
+/* ------------------CART----------------- */
+
+
+/* Add styles for the cart panel */
+/* Add styles for the cart panel */
+.cart-panel {
+    width: 300px;
+    height: 50%;
+    position: fixed;
+    top: 7%;
+    right: -300px;
+    border: 1px solid white; /* Add white border to the left side */
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+    transition:right 1s ease ; /* Add the transition property */
+  }
+  
+  /* Apply transition to the cart-open state */
+  .cart-panel.cart-open {
+    right: 0;
+  }
+  
+  .cart-content {
+    max-height: 90%; /* Adjust this height as needed */
+
+    padding: 20px;
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+
+  .cart-content::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+  
+  /* Style the close button */
+  .cart-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 40px;
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid white;
+  }
+  .cart-item:hover{
+    background-color: white;
+    .shirt-name{
+        color: black;
+    }
+    .shirt-price{
+        color: black;
+    }
+  }
+  .shirt-image {
+    flex: 1;
+    margin-right: 10px;
+  }
+  .shirt-image img {
+    max-width: 100px;
+    height: auto;
+  }
+  .shirt-details {
+    flex: 2;
+  }
+  .shirt-name {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+  }
+  .shirt-price {
+    color: white;
+  }
+
+
+
+/*------------------ CART END ----------------------*/
+
+
+
+ /* ----------------- CONTACT BOX ----------------------- */
+
+.inputBox{
+    width: 40%;
+    margin: 10px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.inputBox input[type="text"], .inputBox input[type="email"]{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 0px 10px;
+    font-size: 16px;
+    color: #444;
+}
+
+.inputBox textarea{
+    width: 100%;
+    height: 120px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 0px 10px;
+    font-size: 16px;
+    color: #444;
+}
+
+.inputBox button{
+    width: 100%;    
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background: rgb(0, 119, 255);
+    color: #FFF;
+    font-size: 20px;
+    margin-top: 1%;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.inputBox button:hover{
+    background: rgb(0, 17, 255);
+    transition: all 0.3s ease;
+}
+
+::placeholder{
+    font-size: 16px;
+}
+
+.alert{
+    width: 100%;
+    background: rgb(0, 255, 106);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    display: none;
+}
+
+
+
+
+
+ /* ----------------- CONTACT BOX END ----------------------- */
+
+
+
+
+
+
+.start{
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+ .blackout {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.blackout-bg{
+    background-color: black;
+}
+
+.menu-btn{
+    color: black;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+
+}
+.navbar {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0%;
+    position: sticky;
+    z-index: 999;
+    background-color: rgb(0, 0, 0,0.4);
+    
+    box-shadow: 0 0 14px rgba(0,0,0,0.3);
+
+}
+
+.navbar .logo h1{
+    color: green;
+    border-bottom: 4px solid #fd6561;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a{
+    display: block;
+    margin-left: 20px;
+    color: white;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .logo img{
+    width: 50;
+    height: 50px;
+}
+.navbar .menu li active {
+    border-bottom: 4px solid #f63e4e;
+}
+
+.navbar .menu li a i {
+    color: white;
+}
+
+.navbar .menu li a:hover {
+    border-bottom: 4px solid white;
+}
+
+form{
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    flex-direction: column;
+}
+
+/* content */
+
+.content{
+    /* background-image: url(../pictures/roses.jpg); */
+    /* background-position: right center; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: white;
+    height: 90vh;
+}
+
+
+h1{
+    padding-bottom: 20px;
+}
+.content h1 {
+    font-size: 40px;
+}
+
+.content p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.content button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content button a{
+    text-decoration: none;
+    color: wheat;
+}
+
+.content button:hover{
+    background-color: rgb(0, 0, 0);
+    
+}
+
+
+.pheading {
+    text-align: center;
+    margin: 50px 0;
+    color: #424144;
+}
+
+.sec{
+    padding: 10px 5%;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-gap: 20px;
+    
+}
+.products .card {
+    
+    width: 310px;
+    background: wheat;
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.3); */
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.products .card:hover{
+    transform: scale(1.05);
+}
+
+.products .card img {
+    height: 400px;
+    width: 100%;
+}
+
+.products .card .desc{
+    padding: 5px 20px;
+    opacity: 0.8;
+}
+
+.products .card .title{
+    font-weight:  900;
+    font-size: 20px;
+    color: #424144;
+    padding: 0 20px;
+}
+
+
+footer{
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 10vh;
+}
+
+footer p{
+    text-align: center;
+    line-height: 10vh;
+}
+footer p a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* responsive */
+
+@media (max-width: 820px){
+
+    .inputBox{
+        width: 90%;
+        margin: 10px 0;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+
+    .content img{
+        width: 400px;
+        height: auto;
+    }
+
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+
+    .menu-btn i.active::before {
+        content: "\f00d";
+    }
+
+
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background-color: rgba(0,0,0,0.8);
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0%;
+    }
+
+    .navbar .menu li{
+        display: flex;
+        justify-content: center;
+    }
+    .navbar .menu li a{
+        margin: 10px 0;
+        font-size: 25px;
+    }
+}
+
+.fade-out {
+        opacity: 0;
+    transition: opacity 1s ease;
+    
+  }
+
+  body::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  

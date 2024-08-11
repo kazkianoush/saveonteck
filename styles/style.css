@@ -1,0 +1,367 @@
+/* General Styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    opacity: 0;
+}
+
+body{
+    height: 100%;
+    /* background-image: url(../pictures/dark.jpg); */
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+/* ------------------CART----------------- */
+
+/* Add styles for the cart panel */
+.cart-panel {
+    width: 300px;
+    height: 50%;
+    position: fixed;
+    top: 7%;
+    right: -300px;
+    border: 1px solid white; /* Add white border to the left side */
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+    transition:right 1s ease ; /* Add the transition property */
+}
+  
+/* Apply transition to the cart-open state */
+.cart-panel.cart-open {
+    right: 0;
+}
+  
+.cart-content {
+    max-height: 90%; /* Adjust this height as needed */
+    padding: 20px;
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.cart-content::-webkit-scrollbar {
+    display: none;
+}
+  
+/* Style the close button */
+.cart-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 40px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid white;
+}
+.cart-item:hover {
+    background-color: white;
+}
+
+.cart-item:hover .shirt-name,
+.cart-item:hover .shirt-price {
+    color: black;
+}
+
+.shirt-image {
+    flex: 1;
+    margin-right: 10px;
+}
+.shirt-image img {
+    max-width: 100px;
+    height: auto;
+}
+.shirt-details {
+    flex: 2;
+}
+.shirt-name {
+    font-weight: bold;
+    color: black; /* Set the color to black */
+    margin-bottom: 5px;
+}
+.shirt-price {
+    color: black; /* Set the color to black */
+}
+
+/*------------------ CART END ----------------------*/
+
+.start{
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.blackout {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.menu-btn{
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.navbar {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0%;
+    position: sticky;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.4);
+    box-shadow: 0 0 14px rgba(0,0,0,0.3);
+}
+
+.navbar .logo h1{
+    color: green;
+    border-bottom: 4px solid #ffffff;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a{
+    display: block;
+    margin-left: 20px;
+    color: white;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .logo img{
+    width: 50px;
+    height: 50px;
+}
+.navbar .menu li active {
+    border-bottom: 4px solid #f63e4e;
+}
+
+.navbar .menu li a i {
+    color: white;
+}
+
+.navbar .menu li a:hover {
+    border-bottom: 4px solid white;
+}
+
+/* content */
+
+.content{
+    /* background-position: right center; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 20vh;
+}
+.content img{
+    width: 25%;
+    height: auto;
+}
+
+.content h1 {
+    font-size: 40px;
+}
+
+.content p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.content button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    background: #f63e4e;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pheading {
+    text-align: center;
+    margin: 50px 0;
+    color: rgb(0, 0, 0);
+}
+
+.sec{
+    padding: 10px 5%;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-gap: 20px;
+}
+.products .card {
+    width: 310px;
+    background: rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.3); */
+    padding: 5px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    border-radius: 25px; /* Add this line to round the corners */
+
+}
+
+.products .card:hover{
+    transform: scale(1.05);
+}
+
+.products .card img {
+    height: 320px;
+    width: 100%;
+    border-radius: 30px; /* Change the radius (10px) to your desired value */
+    /* color: red; */
+}
+
+.products .card .desc{
+    color: black;
+    padding: 10px 125px;
+    opacity: 0.8;
+}
+
+.products .card .title{
+    font-weight:  900;
+    font-size: 20px;
+    color: black;
+    padding: 0 100px;
+}
+
+.products .card .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.products .card .box .price{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.products .card .box .btn{
+    font-size: 13px;
+    color: white;
+    background-color: grey;
+    padding: 10px 18px;
+    font-weight: 900;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.products .card .box .btn:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+footer{
+    margin-top: 20vh;
+    background-color: rgba(0,0,0,0.4);
+    height: 10vh;
+}
+
+footer p{
+    text-align: center;
+    line-height: 10vh;
+}
+footer p a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* responsive */
+
+@media (max-width: 820px){
+    .content{
+        height: 20vh;
+        padding: 0;
+    }
+    .pheading{
+        margin: 20px 0;
+        padding-bottom: 22px;
+    }
+    .content img {
+        width: 50%;
+        height: auto;
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .products .card {
+        margin: 0 auto;
+    }
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+
+    .menu-btn i.active::before {
+        content: "\f00d";
+    }
+
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background-color: rgba(0,0,0,1);
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+
+    .navbar .menu li{
+        display: flex;
+        justify-content: center;
+    }
+    .navbar .menu li a{
+        margin: 10px 0;
+        font-size: 25px;
+    }
+}
+  
+/* For Webkit-based browsers (Chrome, Safari, Opera) */
+body::-webkit-scrollbar {
+    width: 0px;
+}
+  
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}

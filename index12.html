@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href ="styles/styleIndex.css">
+  <script src="script.js"></script>
+  
+  <title>Fax</title>
+</head>
+
+<body>
+
+  <script>
+    window.addEventListener('load', function() {
+      console.log("loading new page index");
+
+        $("*").addClass("start");
+      });
+      </script>
+ 
+  <div class="bg-image"></div>
+
+    <nav class="navbar">
+      <!-- <div class="logo"><img src="pictures/FAX-3D.gif" alt="Description of the GIF"></div> -->
+      <div></div>
+      <ul class="menu">
+        <li><a href="" class="active">Home</a></li>
+        <li><a onclick="transition('shop.html')">Shop</a></li>
+        <li><a onclick="transition('dist/index.html')">Contact</a></li>
+        <li><a onclick="transition('threadblock.html')">Policies</a></li>
+      </ul>
+
+      <!-- Add the close button to the cart panel -->
+<div class="cart-panel">
+  <div class="cart-content">
+    <div class="cart-item">
+      <div class="shirt-image">
+        <img src="pictures/backregan.jpeg" alt="Shirt 1">
+      </div>
+      <div class="shirt-details">
+        <div class="shirt-name">Cool Shirt 1</div>
+        <div class="shirt-price">$19.99</div>
+      </div>
+    </div>
+    <div class="cart-item">
+      <div class="shirt-image">
+        <img src="pictures/backregan.jpeg" alt="Shirt 2">
+      </div>
+      <div class="shirt-details">
+        <div class="shirt-name">Awesome Shirt 2</div>
+        <div class="shirt-price">$24.99</div>
+      </div>
+    </div>
+    <div class="cart-item">
+      <div class="shirt-image">
+        <img src="pictures/backregan.jpeg" alt="Shirt 2">
+      </div>
+      <div class="shirt-details">
+        <div class="shirt-name">Awesome Shirt 2</div>
+        <div class="shirt-price">$24.99</div>
+      </div>
+    </div>
+    <div class="cart-item">
+      <div class="shirt-image">
+        <img src="pictures/backregan.jpeg" alt="Shirt 2">
+      </div>
+      <div class="shirt-details">
+        <div class="shirt-name">Awesome Shirt 2</div>
+        <div class="shirt-price">$24.99</div>
+      </div>
+    </div>
+    <!-- Cart items and total amount can be displayed here -->
+  </div>
+  <span class="cart-close">&times;</span>
+</div>
+
+      <div class="menu-btn">
+        <i class="fa fa-bars"></i>
+      </div>
+    </nav>
+
+    <section class="content">
+      <div class="logo"><img src="pictures/FAX-3D.gif" alt="Description of the GIF"></div>
+      <button class="btn" id="fadeButton" onclick="transition('shop.html')">SHOP NOW</button>
+      
+      <!-- <button>shop now</button> -->
+    </section>
+
+  
+  
+
+    <footer>
+      <p>Copyrights @ <a href=""> FAX </a></p>
+    </footer>
+
+
+
+    <script>
+      $(".menu-btn").click(function(){
+        $(".navbar .menu").toggleClass("active");
+        $(".menu-btn i").toggleClass("active");
+      });
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+    opacity: 0;
+}
+
+
+.start{
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.blackout {
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+.navbar {
+  flex-shrink: 0; /* Prevents shrinking */
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0%;
+  position: sticky;
+  z-index: 999;
+  background-color: rgb(0, 0, 0,0.4);
+  
+  box-shadow: 0 0 14px rgba(0,0,0,0.3);
+
+}
+
+.navbar .logo h1{
+  border-bottom: 4px solid #fd6561;
+}
+
+.navbar .menu li{
+  list-style: none;
+  display: inline-block;
+  justify-content: flex-end;
+}
+
+.navbar .menu li a{
+  display: block;
+  margin-left: 20px;
+  color: white;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.menu-btn{
+  display: none;
+}
+
+.navbar .logo img{
+  width: 50;
+  height: 50px;
+}
+.navbar .menu li active {
+  border-bottom: 4px solid #f63e4e;
+}
+
+.navbar .menu li a i {
+  color: white;
+}
+
+.navbar .menu li a:hover {
+  border-bottom: 4px solid white;
+}
+
+body {
+  background: white;
+  font-family: "Raleway";
+  background-image: url(../pictures/dark.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  overflow-y: scroll;
+}
+
+.buy-btn a{
+  color: white;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+}
+
+.buy-btn a:hover{
+  color: black;
+}
+
+/* Hide the scrollbar */
+body::-webkit-scrollbar {
+  width: 0em; /* Adjust the width as needed */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the track color to transparent */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Set the thumb color to transparent */
+}
+
+.content{
+  height: 100vh;
+}
+
+@media (max-width:400px) {
+  .content{
+    height: 140vh;
+  }
+}
+
+@media (max-width: 820px) {
+  /* Styles for screens with a maximum width of 820px */
+
+  .content{
+    height: 100%;
+  }
+
+  body {
+    background: url(../pictures/deer.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+
+  .menu-btn i.active::before {
+    content: "\f00d";
+  }
+
+  .navbar .menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    background-color: black;
+    text-align: center;
+    padding-top: 80px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar .menu.active {
+    left: 0%;
+  }
+
+  .navbar .menu li {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar .menu li a {
+    margin: 10px 0;
+    font-size: 25px;
+  }
+
+
+
+  .flex-box {
+      display: flex;
+      flex-direction: column; /* Change to a stacked layout */
+    justify-content: start;
+    align-items: start;
+      padding: 20px;
+      margin-bottom: -20px;
+      overflow: auto;
+  }
+  
+  .big-img {
+    width: 50%; /* Adjust the width of the container to make the image smaller */
+    max-width: 400px; /* Set a maximum width for the image */
+    margin-bottom: 15px; /* Add some spacing below the big image */
+    
+    
+  }
+  
+  .big-img img {
+    width: 100%; /* Set the width of the image to 100% of the container */
+    height: auto; /* Maintain the image's aspect ratio */
+    margin-left: -65%;
+    padding-left: 75%;
+
+  }
+
+
+
+  .images {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+  }
+  
+  .small-img {
+    flex: 0 0 auto; /* Prevent flexbox from stretching the images */
+    margin: 0 10px; /* Add some spacing between the images */
+  }
+
+  .small-img img{
+    width: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+  }
+  
+
+}
+
+@media(min-width:821px) {
+  .big-img{
+    padding-left: 20%;
+  }
+
+  .images{
+    margin-left: 27%;
+  }
+  .big-img img{
+    border-radius: 30px; /* Change the radius (10px) to your desired value */
+
+  }
+  .small-img img{
+    border-radius: 100px; /* Change the radius (10px) to your desired value */
+    
+  }
+}
+
+.flex-box{
+  padding-top: 100px;
+  display: flex;
+  margin: 20px auto;
+}
+.left{
+  width: 60%;
+}
+.big-img{
+  width: 250px;
+  transition: opacity 0.5s ease; /* Add the transition effect on opacity */
+
+}
+.big-img img{
+  width: 500px;
+  opacity: 1; /* Set initial opacity to 1 (fully visible) */
+
+
+}
+.images{
+  display: flex;
+  justify-content:left;
+  margin-top: 15px;
+}
+.small-img{
+  width: 80px;
+  overflow: hidden;
+  border: 1.5px solid black;
+}
+.small-img img{
+  width: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.small-img:hover img{
+  transform: scale(1.2);
+}
+.url{
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(0, 102, 255);
+}
+.pname{
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 50px;
+  color: white;
+}
+.ratings i{
+  color: rgb(255, 136, 0);
+}
+.price{
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+.size{
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.size p{
+  font-size: 18px;
+  font-weight: 500;
+}
+.psize{
+  width: 60px;
+  height: 30px;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.psize.active{
+  border-width: 1.5px;
+  color: black;
+  background-color: white;
+  font-weight: 500;
+}
+
+.psize:hover{
+  border-width: 1.5px;
+  color: black;
+  background-color: white;
+  font-weight: 500;
+  transform: scale(1.2);
+}
+
+.quantity{
+  display: flex;
+}
+.quantity p{
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+.quantity input{
+  width: 40px;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  margin-left: 15px;
+}
+.btn-box{
+  display: flex;
+  margin-top: 40px;
+}
+.btn-box button{
+  font-size: 18px;
+  padding: 8px 25px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+.cart-btn{
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-right: 20px;
+  border-color: white;
+  border-width: 2px; /* Optionally, you can specify the border width */
+  border-style: solid; /* Optionally, you can specify the border style */
+}
+.buy-btn{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.cart-btn:hover{
+  background-color: white;
+  color: black;
+}
+.buy-btn:hover{
+  background-color: white;
+  color: black;
+}
+
